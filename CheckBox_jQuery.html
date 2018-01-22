@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div><input type="checkbox" class="mainCheckBox" name="mainCheckBox"><label for="mainCheckBox">Main Check Box</label></div>
+<input type="checkbox" class="ChkBox" name="ChkBox1"><label for="ChkBox1">Check Box 1</label>
+<input type="checkbox" class="ChkBox" name="ChkBox2"><label for="ChkBox2">Check Box 2</label>
+<input type="checkbox" class="ChkBox" name="ChkBox3"><label for="ChkBox3">Check Box 3</label>
+<input type="checkbox" class="ChkBox" name="ChkBox4"><label for="ChkBox4">Check Box 4</label>
+<input type="checkbox" class="ChkBox" name="ChkBox5"><label for="ChkBox5">Check Box 5</label>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script>
+	$("input.mainCheckBox").on("change", function(){
+		$("input.ChkBox").prop("checked",true);
+	});
+	$("input.ChkBox").on("change", function(){
+		$("input.mainCheckBox").prop("checked", false);
+	});
+</script>
+</body>
+</html>

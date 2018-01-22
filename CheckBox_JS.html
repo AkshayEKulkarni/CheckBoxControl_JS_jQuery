@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckBox_JS</title>
+</head>
+<body>
+<div><input type="checkbox" id="mainChkBox" name="mainCheckBox"><label for="mainCheckBox">Main Check Box</label></div>
+<div id="allCheckBoxes">
+<input type="checkbox" id="ChkBox1"  class="check" name="ChkBox1"><label for="ChkBox1">Check Box 1</label>
+<input type="checkbox" id="ChkBox2" class="check"  name="ChkBox2"><label for="ChkBox2">Check Box 2</label>
+<input type="checkbox" id="ChkBox3" class="check" name="ChkBox3"><label for="ChkBox3">Check Box 3</label>
+<input type="checkbox" id="ChkBox4" class="check" name="ChkBox4"><label for="ChkBox4">Check Box 4</label>
+<input type="checkbox" id="ChkBox5"  class="check" name="ChkBox5"><label for="ChkBox5">Check Box 5</label>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded',function() {
+    document.getElementById("mainChkBox").onchange=changeEventHandler;
+	},false);
+
+	document.addEventListener('DOMContentLoaded',function() {
+    var collection = document.getElementById("allCheckBoxes").getElementsByTagName("input");
+    for(var i=0; i<collection.length; i++){
+    		collection[i].onchange = changeEventHandler1;
+    }
+	},false);
+
+function changeEventHandler(event) {
+	var collection = document.getElementById("allCheckBoxes").getElementsByTagName("input");
+	if(document.getElementById("mainChkBox").checked == true){
+	    for (var x=0; x<collection.length; x++) {
+	            collection[x].checked = true;
+	    }
+	}
+	else{
+		 for (var x=0; x<collection.length; x++) {
+	            collection[x].checked = false;
+	    }
+	}
+}
+
+function changeEventHandler1(event){
+	var collection1 = document.getElementById("allCheckBoxes").getElementsByTagName("input");
+	for (var x1=0; x1<collection1.length; x1++) {
+		if(collection1[x1].checked == false){
+			document.getElementById("mainChkBox").checked = false;
+		}
+	}
+}
+</script>
+</body>
+</html>
